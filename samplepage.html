@@ -5,15 +5,49 @@
     <title></title>
 </head>
 <style>
-    #loginContainer{
+    #navlistVertical{
+        list-style:none;
+    }
+    #navlistVertical li{
+        margin: 0 0 20px 0;
+        position:relative;
+        right: 30px;
+    }
+    #navbarVertical {
+        position: absolute;
+        left: 10px;
+        background-color:deepskyblue;
+    }
+    #navbarHorizontal {
+        margin: 5px 5px 5px 5px;
+        position: absolute;
+        left: 60%;
+        width: 40%;
+    }
+    #navlist{
+        display:flex;
+        list-style: none;        
+    }
+    #FirstNavElement{
+
+    }
+    #SecondNavElement{
         position:absolute;
-        top:40%;
-        left:40%;
+        left:19%;
+    }
+    #ThirdNavElement {
+        position: absolute;
+        left: 34.5%;
+    }
+    #loginContainer {
+        position: absolute;
+        top: 40%;
+        left: 40%;
         width: 300px;
         height: 100px;
-        border:2px solid #0094ff;
-        border-radius:10px;
-        margin:3px;
+        border: 2px solid #0094ff;
+        border-radius: 10px;
+        margin: 3px;
     }
     #LoginEmail{
         position:absolute;
@@ -23,9 +57,9 @@
     }
     #EmailInput{
         position:absolute;
-        left: 50px;
+        left: 75px;
         top: 30%;
-        width: 75%;
+        width: 67%;
     }
     #LoginPassword {
         position: absolute;
@@ -47,12 +81,26 @@
     }
 </style>
 <body>
+    <nav id="navbarVertical">
+        <ul id="navlistVertical">
+            <li id="FirstNavElementVertical">Home</li>
+            <li id="SecondNavElementVertical">Accounts</li>
+            <li id="ThirdNavElementVertical">Privacy</li>
+        </ul>
+    </nav>
+    <nav id="navbarHorizontal">
+        <ul id="navlist">
+            <li id="FirstNavElement">Home</li>
+            <li id="SecondNavElement">Accounts</li>
+            <li id="ThirdNavElement">Privacy</li>
+        </ul>
+    </nav>
     <div id="loginContainer">
         <span id="LoginTitle">Login</span>
         <label id="LoginEmail">Email: </label>
-        <input id="EmailInput"/>
+        <input id="EmailInput" />
         <label id="LoginPassword">Password: </label>
-        <input id="PasswordInput"/>
+        <input id="PasswordInput" />
     </div>
 </body>
 </html>
