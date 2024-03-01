@@ -1,0 +1,50 @@
+﻿@model PortfolioResponse
+
+@{
+    var response = new SampleWebApp.Services.LoginService().GetLoginDetails();
+}
+
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Bootstrap Table Example</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var portfolioDetails in @Model.portfolioDetails)
+                {
+                    <tr>
+                        <td>@portfolioDetails.name</td>
+                        <td>@portfolioDetails.skillset</td>
+                        <td>@portfolioDetails.skillStrength</td>
+                        <td>
+                            <form method="post">
+                                <button class="btn btn-primary" name="portfolioId" value="@portfolioDetails.id" type="submit" asp-action="PortfolioDetailView">View</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS (Optional if you need JavaScript features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
